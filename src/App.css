@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #23262a, #191b1f);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card {
+    width: 100%;
+    height: 330px;
+    background-color: rgb(54 60 67);
+    border-radius: 19px;
+    margin-left: auto;
+    padding: 1vw;
+    padding-right: 0;
+    display: flex;
+    box-shadow: 5px 6px 2px #161718;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin-right: 6.5vw;
+    align-items: center;
+}
+
+.side {
+    width: 6%;
+    padding-top: 19px;
+}
+
+.side img {
+    margin: 0 auto;
+}
+
+.card_content {
+    width: 90%;
+}
+
+.card .nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 23px;
+    width: 100%;
+    padding: 10px;
+    list-style: none;
+    background: #171717;
+}
+
+li {
+    font-size: 18px;
+    color: #A3ADB2;
+    font-weight: 400;
+    padding: 16px 28px;
+    cursor: pointer;
+    border-radius: 18px;
+}
+
+.inactive {
+    transition: background-position 0.5s ease;
+    background: linear-gradient(270deg, #212325 0%, #171717 50%);
+    background-size: 200% 100%;
+    background-position: left;
+}
+
+.inactive:hover {
+    background-position: right;
+    transition: background-position 0.5s ease;
+}
+
+.active {
+    background: #28292F;
+    color: white;
+    box-shadow: 0px 23px 40px black, 0px 1px 18px #53626a4b;
+}
+
+.content {
+    color: #969696;
+    font-size: 20px;
+    font-weight: 100;
+    overflow-y: auto;
+    margin-top: 35px;
+    margin-left: 10px;
+    height: 190px;
+    width: 100%;
+}
+
+.content p {
+    width: 95%;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 64px;
+    border-radius: 8px;
+    background: linear-gradient(to bottom right, #888989, #4a4e54);
+}
+
+.boxes {
+    /* width: 60%; */
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxes .box span {
+    width: 10px;
+    height: 10px;
+    background-color: #4A4E54;
+    border-radius: 1px;
+    margin-left: 3px;
+}
+
+hr {
+    width: 500px;
+    height: 6px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #4543431a, #f8f8f81a);
+    margin: 20px 0;
+    border: none;
+}
+
+.container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.container .gallery {
+    text-align: center;
+    background-color: #171717;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 20px;
+    font-weight: 400;
+    padding: 19px 31px;
+    height: fit-content;
+}
+
+
+.arrows button {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(96deg, #303439, #161718);
+    border: none;
+    box-shadow: -5px -5px 30px -10px #96bee7, 4px 5px 30px 5px #101213;
+    cursor: pointer;
+}
+
+.add_image {
+    margin-right: 20px;
+    margin-left: auto;
+    border-radius: 90px;
+    height: 45px;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0px 15px;
+    border: none;
+    cursor: pointer;
+    background: #ffffff08;
+    color: white;
+    box-shadow: -.5px -.5px 7px 0 #ffffff40, 9px 10px 7px 0 #0006, inset 0 0 49px 0 #ffffff0d, inset 0 3.25px 3.25px 0 #ffffff26;
+}
+
+.add_image img {
+    margin-right: 6px;
+}
+
+.hidden {
+    display: none;
+}
+.gallery_display {
+    white-space: nowrap;
+    overflow-x: visible; /* Allow overflow in x-axis */
+    overflow-y: hidden;
+    padding-top: 10px;
+    height: 300px;
+    height: fit-content;
+    padding-left: 20px;
+    position: relative; 
+}
+
+.gallery_image {
+    width: 180px;
+    display: inline-block;
+    height: 180px;
+    margin-right: 36px;
+    transition: .6s transform ease-in-out, filter .6s ease-in; /* Added transition for filter */
+    object-position: center;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    filter: grayscale(90%); /* Apply black and white filter */
+}
+
+.gallery_display::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.gallery_image:hover {
+    transform: rotate(-10deg) scale(1.05) ;
+    z-index: 2000;
+    margin-bottom: 20px;
+    filter: grayscale(0%); /* Remove black and white filter on hover */
+}
+
